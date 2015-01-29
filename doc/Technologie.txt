@@ -1,0 +1,9 @@
+### Technologie by Maxence Minguet ###
+
+Les technologies utilisées sont :
+
+- Zend Framework 2
+- SQL : PostgreSQL
+- Framework CSS : Boostrap 2
+- Github (https://github.com/MaxenceMinguet/test-iadvize; DEPOT : https://github.com/MaxenceMinguet/test-iadvize.git)
+- Gestionnaire de dépendance : Composer

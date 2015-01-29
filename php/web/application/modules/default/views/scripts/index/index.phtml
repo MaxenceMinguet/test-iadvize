@@ -1,0 +1,26 @@
+<?php $this->headMeta()->appendName('description', "200 dernières VDM"); ?>
+<?php $this->headTitle("Test - Développeur PHP"); ?>
+
+<?php $this->headScript()->appendFile('/assets/js/script.js'); ?>
+
+
+<section class="step when gray">
+	<div class="container">
+            <div class="row-fluid">
+                <div class="offset1 span10">
+                    <h1>Les 200 dernières VDM</h1>
+                    
+                     <div class="vdm">
+                    <?php foreach ($this->data as $post) :?>                   
+                    <?= $post['content']; ?> <br />
+                    <?= 'Posté par ' . $post['author']; ?>
+                    <?= ' - Le ' . $post['date_post']; ?>
+                     <br /> <br />
+
+                    <?php endforeach;?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</section>

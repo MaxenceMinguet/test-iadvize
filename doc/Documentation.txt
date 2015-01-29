@@ -1,0 +1,28 @@
+### DOCUMENTATION by Maxence Minguet ###
+
+# INSTALL #
+Pour importer le dépot : git clone https://github.com/MaxenceMinguet/test-iadvize.git
+
+Pour installer ZF : sudo apt-get install libzend-framework-php
+
+Pour installer PostgreSQL : sudo apt-get install postgresql
+
+Après cela il suffit de faire un : bash bash/iadvize.sh
+
+Pour la base donnée il faut ce connecter a postgreSQL : su postgres
+Puis faire un : cat rollout/rollout.sql | psql
+
+
+# Description #
+La partie html et css des pages est très peu appronfondie.
+
+La page d'accueil (index) fait juste un appelle à la base de donnée ou sont stockée les 200 derniers posts.
+Pour la partie web service, cela fonctionne de la même manière ce sont juste diffèrentes méthodes appellées
+qui font des requêtes dans la base de donnée.
+
+Pour la partie importation des 200 derniers posts, je fait tourner un CRON tout les 5 minutes (/etc/crond.d/put-last-post-vdm)
+qui les récupère à l'aide d'un script que j'ai fait (php/library/My/Batch/PutLastPostVdm.php) et qui importe/met à jour les posts
+dans la base de donnée.
+
+Si vous souhaité testé le script php : bash php/library/My/put-last-post-vdm
+Cela mettera à jour la base de donnée.

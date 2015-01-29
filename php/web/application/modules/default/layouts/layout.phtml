@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<?php echo($this->headMeta()); ?>
+		<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+		<?php
+	  	$this->headTitle()->setSeparator(' :: ');
+        $this->headTitle('Iadvize');
+	  	echo($this->headTitle());
+	  	?>
+
+        <meta name="Content-Language" content="fr">
+        <meta name="Description" content="Test Développeur">
+        <meta name="Keywords" content="">
+        <meta name="DC.Subject" content="Test Développeur">
+        <meta name="DC.Copyright" content="Iadvize">
+        <meta name="DC.Author" content="Maxence Minguet">
+        <meta name="DC.Identifier-Url" content="http:///iadvize.fr/">
+        <meta name="DC.Keywords" content="">
+        <meta name="DC.Description" content="Test Développeur">
+        <meta name="Subject" content="Test Développeur">
+        <meta name="Copyright" content="Iadvize">
+        <meta name="Author" content="Maxence Minguet">
+        <meta name="Identifier-Url" content="http://iadvize.fr/">
+        <meta name="Robots" content="all">
+        <meta name="Rating" content="general">
+        <meta name="Distribution" content="global">
+        <meta name="Geography" content="44000">
+        <meta name="Category" content="travel">
+        <meta name="DC.Title" content="Test Développeur">
+        <meta name="DC.Content-Type" content="UTF-8">
+        <meta name="DC.Content-Language" content="fr">
+
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<link href="/assets/css/bootstrap-custom.css" rel="stylesheet" media="screen">
+		<?= $this->headLink() ?>
+		<link href="/assets/css/style.css" rel="stylesheet" media="screen">
+		
+		<link rel="icon" href="/favicon.ico" />
+  	</head>
+  	<?php $page = $this->userAgent()->getServerValue('request_uri'); ?>
+  	<body class="<?= $page == '/' ? 'no-footer' : '' ?>">
+  	
+  		<div id="wrapper" itemscope itemtype="http://schema.org/LocalBusiness">
+  			<div id="background">
+	  			<?= $this->placeholder('background'); ?>
+	  		</div>
+		  	<header id="header">
+		  		<div class="navbar navbar-inverse navbar-fixed-top">
+					<div class="navbar-inner">
+	        			<div class="container">
+				          	<div class="nav-collapse collapse">
+					            <ul class="nav pull-right">
+										<li class="<?= $page == '/a-propos' ? 'active' : '' ?>"><a href="<?= $this->url(array(), "about", true) ?>">À propos</a></li>
+					            	
+					            </ul>
+			          		</div>
+				        </div>
+		      		</div>
+			    </div>
+		  	</header>
+
+		  	<div id="content">
+			  	<?php if (count($this->flashMessages())) : ?>
+		  		<div class="container">
+			  		<div class="row-fluid">
+					  	<div class="alert alert-info offset1 span10 flash-message">
+					  		<button type="button" class="close" data-dismiss="alert">&times;</button>
+					  		<ul>
+					        <?php foreach ($this->flashMessages() as $message) {
+					        	echo('<li>'.addslashes($message).'</li>');
+					         } ?>
+				        	</ul>
+				        </div>
+					</div>
+			  	</div>
+				<?php endif; ?>
+
+		  		<?= $this->layout()->content ?>
+	  		</div>
+
+		  	<footer id="footer">
+		  		<div class="bottom container">
+					<div class="row-fluid">
+						<ul>
+							<li>&nbsp;-&nbsp;</li>
+							<li><a href="<?= $this->url(array(), "about", true) ?>">A propos</a></li>
+                            <li>&nbsp;-&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+		  	</footer>
+		  	
+		    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		    <script src="/assets/js/bootstrap.min.js"></script>
+			<?= $this->headScript() ?>
+		</div>
+  	</body>
+</html>

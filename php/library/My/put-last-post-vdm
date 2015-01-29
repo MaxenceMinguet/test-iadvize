@@ -1,0 +1,3 @@
+#!/bin/bash
+export APPLICATION_ENV="developpment"
+exec $(dirname "$0")/run.php My_Batch_PutLastPostVdm "$@"
