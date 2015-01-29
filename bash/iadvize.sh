@@ -49,3 +49,5 @@ then
 else
 	echo "Echec du git clone"
 fi
+
+php ../composer.phar update
