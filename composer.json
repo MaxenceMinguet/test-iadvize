@@ -1,0 +1,10 @@
+{
+    "require": {
+	"php": ">=5.3.23",
+	"zendframework/zendxml": "~1.0-dev",
+	"zendframework/zendframework": "2.3.*@dev",
+	"twitter/bootstrap": "3.3.*@dev",
+	"silverstripe/framework": ">=3.2",
+	"silverstripe/postgresql": "1.2.*@dev"
+    }
+}
